@@ -19,6 +19,11 @@ class RegisterView(generics.CreateAPIView):
 class RandomCats(APIView):
     def get(self, request):
         response = requests.get('https://api.thecatapi.com/v1/images/search?limit=20&breed_ids=beng&api_key=live_yEibOC2MWOazRnaBlDfAPyWIxZmtUnQutCIcrlfCdESCaVTVs4ZPrijW7rRASmsa')
+
+        # print id de cada gato
+        for cat in response.json():
+            print(cat['id'])
+            
         if response.status_code == 200:
             return Response(response.json(), status=status.HTTP_200_OK)
         else:
