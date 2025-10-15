@@ -16,7 +16,7 @@ class CustomUser(AbstractUser):
     
 class FavoriteCat(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='favorite_cats')
-    cat_id = models.CharField(max_length=100)  # ID del gato de The Cat API
+    cat_id = models.CharField(max_length=15)  # ID del gato de The Cat API
     image_url = models.URLField()  # URL de la imagen del gato
 
     def __str__(self):

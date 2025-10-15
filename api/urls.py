@@ -3,7 +3,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from .views import RegisterView, RandomCats, CatsByBreed
+from .views import RegisterView, RandomCats, CatsByBreed, FavoriteCatsView
 
 urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('logout/', TokenRefreshView.as_view(), name='token_refresh'),
     path('random-cats/', RandomCats.as_view(), name='random_cats'),
     path('cats-by-breed/<str:breed_id>/', CatsByBreed.as_view(), name='cats_by_breed'),
+    path('favorite-cats/', FavoriteCatsView.as_view(), name='favorite_cats'),
 
 
     ]
