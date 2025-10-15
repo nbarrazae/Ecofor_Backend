@@ -18,7 +18,7 @@ class RegisterView(generics.CreateAPIView):
 
 class RandomCats(APIView):
     def get(self, request):
-        response = requests.get('https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&abys&api_key=yEibOC2MWOazRnaBlDfAPyWIxZmtUnQutCIcrlfCdESCaVTVs4ZPrijW7rRASmsa')
+        response = requests.get('https://api.thecatapi.com/v1/images/search?limit=18&has_breeds=1&abys&api_key=yEibOC2MWOazRnaBlDfAPyWIxZmtUnQutCIcrlfCdESCaVTVs4ZPrijW7rRASmsa')
 
         jsonArray = []
         # print id de cada gato
